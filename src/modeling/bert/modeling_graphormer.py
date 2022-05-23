@@ -13,8 +13,8 @@ import code
 import torch
 from torch import nn
 from .modeling_bert import BertPreTrainedModel, BertEmbeddings, BertPooler, BertIntermediate, BertOutput, BertSelfOutput
-import src.modeling.data.config as cfg
-from src.modeling._gcnn import GraphConvolution, GraphResBlock
+from ..data import config as cfg
+from .._gcnn import GraphConvolution, GraphResBlock
 from .modeling_utils import prune_linear_layer
 LayerNormClass = torch.nn.LayerNorm
 BertLayerNorm = torch.nn.LayerNorm

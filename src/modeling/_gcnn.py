@@ -133,9 +133,12 @@ class GraphConvolution(torch.nn.Module):
             adj_mat_value = torch.load('./src/modeling/data/smpl_431_adjmat_values.pt')
             adj_mat_size = torch.load('./src/modeling/data/smpl_431_adjmat_size.pt')
         elif mesh=='hand':
-            adj_indices = torch.load('./src/modeling/data/mano_195_adjmat_indices.pt')
-            adj_mat_value = torch.load('./src/modeling/data/mano_195_adjmat_values.pt')
-            adj_mat_size = torch.load('./src/modeling/data/mano_195_adjmat_size.pt')
+            # adj_indices = torch.load('./src/modeling/data/mano_195_adjmat_indices.pt')
+            # adj_mat_value = torch.load('./src/modeling/data/mano_195_adjmat_values.pt')
+            # adj_mat_size = torch.load('./src/modeling/data/mano_195_adjmat_size.pt')
+            adj_indices = torch.load('./handmocap/hand_modules/MeshGraphormer/src/modeling/data/mano_195_adjmat_indices.pt')
+            adj_mat_value = torch.load('./handmocap/hand_modules/MeshGraphormer/src/modeling/data/mano_195_adjmat_values.pt')
+            adj_mat_size = torch.load('./handmocap/hand_modules/MeshGraphormer/src/modeling/data/mano_195_adjmat_size.pt')
 
         self.adjmat = torch.sparse_coo_tensor(adj_indices, adj_mat_value, size=adj_mat_size).to(device)
 

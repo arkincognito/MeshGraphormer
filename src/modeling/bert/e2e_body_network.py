@@ -5,7 +5,7 @@ Licensed under the MIT license.
 """
 
 import torch
-import src.modeling.data.config as cfg
+from ..data import config as cfg
 
 class Graphormer_Body_Network(torch.nn.Module):
     '''
